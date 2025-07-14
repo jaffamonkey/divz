@@ -30,14 +30,13 @@ function App() {
             </a>
           ))}
         </div>
-        <h1>divz</h1>
-        <small>
-          A React component to scroll, swipe and zoom through divs on the 3D
-          z-axis
-        </small>
-        <a className="github" href="https://github.com/lewhunt/divz">
-          GitHub
+        <a className="github" href="https://terrormar.club">
+          <img className="github" src="./images/favicon.png" alt="Terrormar" />
         </a>
+        <h1>Terrormar</h1>
+        <div>
+          <TextFader />
+        </div>
       </div>
 
       {demo === 1 ? (
