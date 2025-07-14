@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Divz, DivzVideoItem } from "./lib/Divz";
 import "./App.css";
+import TextFader from "./lib/Divz/components/TextFader";
 
 function App() {
   const [demo, setDemo] = useState<number>(1);
