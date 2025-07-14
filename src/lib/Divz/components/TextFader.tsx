@@ -1,6 +1,8 @@
 // TextFader.tsx
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import "./App.css";
+import TextFader from "./lib/Divz/components/TextFader";
 
 const lines = [
     "Come to Terrormar, the idyllic island destination where fear is a distant memory",
