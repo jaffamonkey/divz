@@ -7,7 +7,7 @@ export const Menubar: React.FC = () => {
     setVisible(prev => !prev);
   };
 
-  const [, setDemo] = useState<number>(1);
+  const [demo, setDemo] = useState<number>(1);
 
   // const isActive = (link: number) => {
   //   return link === demo ? "active" : "";
@@ -15,7 +15,7 @@ export const Menubar: React.FC = () => {
 
   const handleClick = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    setDemo(3)
+    setDemo(demo + 2)
   }
 
   return (
@@ -29,7 +29,7 @@ export const Menubar: React.FC = () => {
           <a className="fa fa-instagram" href="https://www.instagram.com/thelillyguildtrust" />
           <a className="fa fa-envelope" href="mailto:terrormarclub@gmail.com" />
           <a className="fa fa-phone" href="tel:+447394074047" />
-          <a className="fa fa-camera" href="#" onClick={handleClick} />
+          <a className="fa fa-camera" onClick={handleClick} />
         </div>
       )}
     </>
