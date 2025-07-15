@@ -36,7 +36,6 @@ function App() {
           >
             Images
           </a>
-          {/* ))} */}
         </div>
         <a className="github" href="https://terrormar.club">
           <img className="github" src="./images/favicon.png" alt="Terrormar" />
