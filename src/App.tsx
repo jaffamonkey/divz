@@ -13,9 +13,9 @@ function App() {
     setDemo(4);
   };
 
-  const isActive = (link: number) => {
-    return link === demo ? "active" : "";
-  };
+  // const isActive = (link: number) => {
+  //   return link === demo ? "active" : "";
+  // };
 
   return (
     <div className={`app ${demo >= 2 ? "dark-mode" : ""}`}>
@@ -24,14 +24,14 @@ function App() {
         <div className={`demo-list`}>
           <a
             key={3}
-            className={isActive(3)}
+            className="fa fa-camera"
             onClick={() => setDemo(3)}
           >
             Videos
           </a>
           <a
             key={3}
-            className={isActive(4)}
+            className="fa fa-camera"
             onClick={() => setDemo(4)}
           >
             Images
