@@ -9,9 +9,9 @@ export const Menubar: React.FC = () => {
 
   const [demo, setDemo] = useState<number>(1);
 
-  const isActive = (link: number) => {
-    return link === demo ? "active" : "";
-  };
+  // const isActive = (link: number) => {
+  //   return link === demo ? "active" : "";
+  // };
   return (
     <>
       <button className="toggle-button" onClick={toggleMenubar}>
