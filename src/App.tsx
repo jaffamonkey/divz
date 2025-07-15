@@ -10,8 +10,7 @@ function App() {
   useEffect(() => randomizeDemo(), []);
 
   const randomizeDemo = () => {
-    const randomNumber = Math.floor(Math.random() * 4) + 1;
-    setDemo(randomNumber);
+    setDemo(4);
   };
 
   // const isActive = (link: number) => {
@@ -21,7 +20,7 @@ function App() {
   return (
     <div className={`app ${demo >= 2 ? "dark-mode" : ""}`}>
       <div className="app-header">
-         <Menubar />
+        <Menubar />
         {/* <div className={`demo-list`}>
           {[1, 2, 3, 4].map((demoNumber) => (
             <a
