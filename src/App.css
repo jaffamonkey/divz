@@ -131,6 +131,33 @@
     line-height: normal;
   }
 
+  @media (max-width: 480px) {
+    padding: 33px;
+
+    h1 {
+      font-family: 'Cabal';
+      font-size: 48px;
+      line-height: normal;
+      color: #FFFFFF;
+      font-weight: bold;
+      padding-top: 25px;
+    }
+  }
+
+  @media (max-height: 480px) {
+    padding: 10px;
+
+    small {
+      display: none;
+    }
+
+    h1 {
+      font-family: 'Cabal';
+      font-size: 48px;
+      margin-top: 25px;
+    }
+  }
+}
 
 .fa {
   /* padding-right: 5px; */
