@@ -13,9 +13,9 @@ function App() {
     setDemo(4);
   };
 
-  const isActive = (link: number) => {
-    return link === demo ? "active" : "";
-  };
+  // const isActive = (link: number) => {
+  //   return link === demo ? "active" : "";
+  // };
 
   return (
     <div className={`app ${demo >= 2 ? "dark-mode" : ""}`}>
