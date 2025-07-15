@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Divz, DivzVideoItem } from "./lib/Divz";
 import "./App.css";
+import { Menubar } from "./lib/Divz/components";
 import TextFader from "./lib/Divz/components/TextFader";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className={`app ${demo >= 2 ? "dark-mode" : ""}`}>
       <div className="app-header">
+         <Menubar />
         <div className={`demo-list`}>
           {[1, 2, 3, 4].map((demoNumber) => (
             <a
