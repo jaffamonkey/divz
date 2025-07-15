@@ -161,14 +161,14 @@
 
 .fa {
   /* padding-right: 5px; */
-  font-size: 35px;
-  width: 35px;
+  font-size: 20px;
+  width: 20px;
   text-align: center;
   text-decoration: none;
   opacity: 0.6;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 1280px) {
   .fa {
     /* padding-right: 5px; */
     font-size: 25px;
