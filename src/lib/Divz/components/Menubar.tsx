@@ -13,16 +13,11 @@ export const Menubar: React.FC = () => {
   //   return link === demo ? "active" : "";
   // };
 
-  function ActionLink() {
-    const handleClick = (e: { preventDefault: () => void; }) => {
-      e.preventDefault();
-      setDemo(3)
-    }
-    return (
-      <a className="fa fa-camera" onClick={handleClick} />
-    );
+  const handleClick = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setDemo(3)
   }
-  ActionLink()
+
   return (
     <>
       <button className="toggle-button" onClick={toggleMenubar}>
@@ -34,6 +29,7 @@ export const Menubar: React.FC = () => {
           <a className="fa fa-instagram" href="https://www.instagram.com/thelillyguildtrust" />
           <a className="fa fa-envelope" href="mailto:terrormarclub@gmail.com" />
           <a className="fa fa-phone" href="tel:+447394074047" />
+          <a className="fa fa-camera" onClick={handleClick} />
         </div>
       )}
     </>
