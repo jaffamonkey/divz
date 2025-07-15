@@ -22,7 +22,7 @@ function App() {
     <div className={`app ${demo >= 2 ? "dark-mode" : ""}`}>
       <div className="app-header">
          <Menubar />
-        <div className={`demo-list`}>
+        {/* <div className={`demo-list`}>
           {[1, 2, 3, 4].map((demoNumber) => (
             <a
               key={demoNumber}
@@ -32,7 +32,7 @@ function App() {
               Demo{demoNumber}
             </a>
           ))}
-        </div>
+        </div> */}
         <a className="github" href="https://terrormar.club">
           <img className="github" src="./images/favicon.png" alt="Terrormar" />
         </a>

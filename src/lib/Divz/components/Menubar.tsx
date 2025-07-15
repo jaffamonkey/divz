@@ -9,9 +9,9 @@ export const Menubar: React.FC = () => {
 
   const [demo, setDemo] = useState<number>(1);
 
-  // const isActive = (link: number) => {
-  //   return link === demo ? "active" : "";
-  // };
+  const isActive = (link: number) => {
+    return link === demo ? "active" : "";
+  };
   return (
     <>
       <button className="toggle-button" onClick={toggleMenubar}>
@@ -25,8 +25,8 @@ export const Menubar: React.FC = () => {
           <a className="fa fa-phone" href="tel:+447394074047" />
           <a
             key={3}
-            className="fa fa-phone"
-            onClick={() => setDemo(3)} />
+            className={isActive(3)}
+            onClick={() => setDemo(3)}>Videos</a>
         </div>
       )}
     </>
