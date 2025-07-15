@@ -20,7 +20,7 @@ function App() {
   return (
     <div className={`app ${demo >= 2 ? "dark-mode" : ""}`}>
       <div className="app-header">
-        <Menubar />
+        {/* <Menubar /> */}
         <div className={`demo-list`}>
           <a
             key={3}
@@ -32,6 +32,9 @@ function App() {
             className="fa fa-camera"
             onClick={() => setDemo(4)}
           />
+          <a className="fa fa-instagram" href="https://www.instagram.com/thelillyguildtrust" />
+          <a className="fa fa-envelope" href="mailto:terrormarclub@gmail.com" />
+          <a className="fa fa-phone" href="tel:+447394074047" />
         </div>
         <a className="github" href="https://terrormar.club">
           <img className="github" src="./images/favicon.png" alt="Terrormar" />
