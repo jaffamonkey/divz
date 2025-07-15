@@ -30,6 +30,13 @@ function App() {
           >
             Videos
           </a>
+                    <a
+            key={3}
+            className={isActive(3)}
+            onClick={() => setDemo(4)}
+          >
+            Images
+          </a>
           {/* ))} */}
         </div>
         <a className="github" href="https://terrormar.club">
