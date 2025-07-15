@@ -32,7 +32,7 @@ function App() {
           </a>
                     <a
             key={3}
-            className={isActive(3)}
+            className={isActive(4)}
             onClick={() => setDemo(4)}
           >
             Images
