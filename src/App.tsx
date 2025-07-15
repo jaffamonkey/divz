@@ -26,16 +26,12 @@ function App() {
             key={3}
             className="fa fa-camera"
             onClick={() => setDemo(3)}
-          >
-            Videos
-          </a>
+          />
           <a
             key={3}
             className="fa fa-camera"
             onClick={() => setDemo(4)}
-          >
-            Images
-          </a>
+          />
         </div>
         <a className="github" href="https://terrormar.club">
           <img className="github" src="./images/favicon.png" alt="Terrormar" />
