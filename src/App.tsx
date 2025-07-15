@@ -23,13 +23,13 @@ function App() {
         <Menubar />
         <div className={`demo-list`}>
           {/* {[1, 2, 3, 4].map((demoNumber) => ( */}
-            <a
-              key={3}
-              className={isActive(3)}
-              onClick={() => setDemo(3)}
-            >
-              Videos
-            </a>
+          <a
+            key={3}
+            className={isActive(3)}
+            onClick={() => setDemo(3)}
+          >
+            Videos
+          </a>
           {/* ))} */}
         </div>
         <a className="github" href="https://terrormar.club">
@@ -136,7 +136,7 @@ function Demo3() {
 
       <Divz
         autoPlay={true}
-        autoPlayDuration={7000}
+        autoPlayDuration={5000}
         className="demo3"
         isDarkMode={true}
         isExpanded={true}
@@ -173,7 +173,7 @@ const demo4Images: string[] = [];
 /* Demo 4 images generated in Midjourney by Manoela Ilic:
 https://github.com/codrops/GridItemHoverEffect/
 */
-for (let i = 1; i <= 22; i++) {
+for (let i = 1; i <= 32; i++) {
   demo4Images.push(`./demo4/${i}.jpg`);
 }
 
@@ -187,7 +187,12 @@ function Demo4() {
     <>
       <img className="background" src="./demo4/1.png" />
 
-      <Divz className="demo4" autoPlay={true} isDarkMode={true}>
+      <Divz
+        className="demo4"
+        autoPlay={true}
+        isDarkMode={true}
+        isExpanded={true}
+        showPlayButton={false}>
         {demo4Images.map((imageUrl, index) => (
           <figure key={index}>
             <img src={imageUrl} />
