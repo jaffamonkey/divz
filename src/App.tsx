@@ -89,21 +89,17 @@ function Demo2() {
         isDarkMode={true}
       >
         <div>
-          <img src="./demo3/astronaut-4106766_1280.jpg" />
+          <img src="./demo3/1.png" />
         </div>
 
         <div>
-          <img src="./demo3/astronaut-6052199_1280.jpg" />
-        </div>
-
-        <div>
-          <img src="./demo3/plane-5462276_1280.jpg" />
+          <img src="./demo3/2.png" />
         </div>
 
         <div>
           <video autoPlay playsInline loop muted>
             <source
-              src="./demo3/space-ship-magic-purple-sci-fi-53601.mp4"
+              src="./demo3/1.mp4"
               type="video/mp4"
             />
           </video>
@@ -116,16 +112,12 @@ function Demo2() {
 // Demo 3 assets from Pixabay and Runway
 const demo3Assets = [
   {
-    image: "./demo3/astronaut-4106766_1280.jpg",
-    video: "./demo3/astronaut-4106766_1280.mp4",
+    image: "./demo3/1.jpg",
+    video: "./demo3/1.mp4",
   },
   {
-    image: "./demo3/astronaut-6052199_1280.jpg",
-    video: "./demo3/astronaut-6052199_1280.mp4",
-  },
-  {
-    image: "./demo3/plane-5462276_1280.jpg",
-    video: "./demo3/plane-5462276_1280.mp4",
+    image: "./demo3/2.jpg",
+    video: "./demo3/2.mp4",
   },
 ];
 
@@ -136,7 +128,7 @@ function Demo3() {
     <>
       <video autoPlay playsInline loop muted className="background">
         <source
-          src="./demo3/star-stars-night-space-light-121702.mp4"
+          src="./demo3/1.mp4"
           type="video/mp4"
         />
       </video>
@@ -165,7 +157,7 @@ function Demo3() {
         <div>
           <video autoPlay playsInline loop muted>
             <source
-              src="./demo3/space-ship-magic-purple-sci-fi-53601.mp4"
+              src="./demo3/2.mp4"
               type="video/mp4"
             />
           </video>
