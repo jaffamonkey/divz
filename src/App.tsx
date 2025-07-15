@@ -13,25 +13,25 @@ function App() {
     setDemo(4);
   };
 
-  // const isActive = (link: number) => {
-  //   return link === demo ? "active" : "";
-  // };
+  const isActive = (link: number) => {
+    return link === demo ? "active" : "";
+  };
 
   return (
     <div className={`app ${demo >= 2 ? "dark-mode" : ""}`}>
       <div className="app-header">
         <Menubar />
-        {/* <div className={`demo-list`}>
-          {[1, 2, 3, 4].map((demoNumber) => (
+        <div className={`demo-list`}>
+          {/* {[1, 2, 3, 4].map((demoNumber) => ( */}
             <a
-              key={demoNumber}
-              className={isActive(demoNumber)}
-              onClick={() => setDemo(demoNumber)}
+              key={3}
+              className={isActive(3)}
+              onClick={() => setDemo(3)}
             >
-              Demo{demoNumber}
+              Videos
             </a>
-          ))}
-        </div> */}
+          {/* ))} */}
+        </div>
         <a className="github" href="https://terrormar.club">
           <img className="github" src="./images/favicon.png" alt="Terrormar" />
         </a>
