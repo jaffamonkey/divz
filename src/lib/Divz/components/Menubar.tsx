@@ -29,7 +29,7 @@ export const Menubar: React.FC = () => {
           <a className="fa fa-instagram" href="https://www.instagram.com/thelillyguildtrust" />
           <a className="fa fa-envelope" href="mailto:terrormarclub@gmail.com" />
           <a className="fa fa-phone" href="tel:+447394074047" />
-          <a className="fa fa-camera" onClick={handleClick} />
+          <a className="fa fa-camera" href="#" onClick={handleClick} />
         </div>
       )}
     </>
