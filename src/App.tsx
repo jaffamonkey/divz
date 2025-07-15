@@ -24,7 +24,7 @@ function App() {
         <div className={`demo-list`}>
           <a
             key={3}
-            className="fa fa-camera"
+            className="fa fa-film"
             onClick={() => setDemo(3)}
           />
           <a
