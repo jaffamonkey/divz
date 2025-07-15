@@ -88,6 +88,7 @@ function Demo2() {
         autoPlayDuration={3000}
         className="demo2"
         isDarkMode={true}
+        showExpandButton={false}
       >
         <div>
           <img src="./demo3/1.png" />
@@ -192,7 +193,9 @@ function Demo4() {
         autoPlay={true}
         isDarkMode={true}
         isExpanded={true}
-        showPlayButton={false}>
+        showPlayButton={false}
+        showExpandButton={false}
+      >
         {demo4Images.map((imageUrl, index) => (
           <figure key={index}>
             <img src={imageUrl} />
