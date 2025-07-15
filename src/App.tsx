@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Divz, DivzVideoItem } from "./lib/Divz";
 import "./App.css";
-import { Menubar } from "./lib/Divz/components";
+import { Menubar } from "./lib/Divz/components/Menubar";
 import TextFader from "./lib/Divz/components/TextFader";
 
 function App() {
