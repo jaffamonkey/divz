@@ -25,7 +25,7 @@ export const Menubar: React.FC = () => {
           <a className="fa fa-phone" href="tel:+447394074047" />
           <a
             key={3}
-            className={isActive(3)}
+            className="fa fa-phone"
             onClick={() => setDemo(3)} />
         </div>
       )}
