@@ -142,6 +142,7 @@ function Demo3() {
         isDarkMode={true}
         isExpanded={true}
         showPlayButton={false}
+        showExpandButton={false}
         onIndexChange={(i) => setSelectedIndex(i)}
       >
         {/* Example of using a custom video component that loads/plays when item is active */}
