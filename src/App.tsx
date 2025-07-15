@@ -191,10 +191,10 @@ function Demo4() {
         {demo4Images.map((imageUrl, index) => (
           <figure key={index}>
             <img src={imageUrl} />
-            <figcaption>
+            {/* <figcaption>
               <div>{(index + 1).toString().padStart(2, "0")}</div>
               <div>{`demo4/${index + 1}.png`}</div>
-            </figcaption>
+            </figcaption> */}
           </figure>
         ))}
       </Divz>
