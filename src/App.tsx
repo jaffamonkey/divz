@@ -185,7 +185,7 @@ https://github.com/codrops/GridItemHoverEffect/
 function Demo4() {
   return (
     <>
-      <img className="background" src="./demo4/1.png" />
+      {/* <img className="background" src="./demo4/1.png" /> */}
 
       <Divz
         className="demo4"
