@@ -133,6 +133,7 @@
     padding: 33px;
 
     h1 {
+      font-family: 'Cabal';
       font-size: 48px;
       line-height: normal;
       color: #FFFFFF;
@@ -149,6 +150,7 @@
     }
 
     h1 {
+      font-family: 'Cabal';
       font-size: 48px;
       margin-top: 25px;
     }
