@@ -360,7 +360,7 @@ video.background {
   /* height: 50%; */
   font-family: 'Cabal';
   font-weight: bold;
-  top: 170px;
+  top: 150px;
   width: 15em;
   z-index: 1;
   margin: 0 auto;
@@ -381,7 +381,7 @@ video.background {
     /* height: 50%; */
     font-family: 'Cabal';
     font-weight: bold;
-    top: 15%;
+    top: 12%;
     width: 300px;
     z-index: 1;
     margin: 0 auto;
