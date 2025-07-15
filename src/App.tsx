@@ -184,7 +184,7 @@ https://github.com/codrops/GridItemHoverEffect/
 function Demo4() {
   return (
     <>
-      <img className="background" src="./demo4/bg.jpg" />
+      <img className="background" src="./demo4/1.png" />
 
       <Divz className="demo4" autoPlay={true} isDarkMode={true}>
         {demo4Images.map((imageUrl, index) => (
@@ -192,7 +192,7 @@ function Demo4() {
             <img src={imageUrl} />
             <figcaption>
               <div>{(index + 1).toString().padStart(2, "0")}</div>
-              <div>{`demo4/${index + 1}.jpg`}</div>
+              <div>{`demo4/${index + 1}.png`}</div>
             </figcaption>
           </figure>
         ))}
