@@ -22,7 +22,7 @@ export const Menubar: React.FC = () => {
       <a className="fa fa-camera" onClick={handleClick} />
     );
   }
-
+  ActionLink()
   return (
     <>
       <button className="toggle-button" onClick={toggleMenubar}>
@@ -35,7 +35,6 @@ export const Menubar: React.FC = () => {
           <a className="fa fa-instagram" href="https://www.instagram.com/thelillyguildtrust" />
           <a className="fa fa-envelope" href="mailto:terrormarclub@gmail.com" />
           <a className="fa fa-phone" href="tel:+447394074047" />
-          <a href="#" onClick={ActionLink} />
         </div>
       )}
     </>
