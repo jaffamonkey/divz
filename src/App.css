@@ -30,6 +30,8 @@
   }
 
   .demo-list {
+    backdrop-filter: invert(30%);
+    border-radius: 16px;
     position: absolute;
     top: 10px;
     left: 20px;
@@ -52,6 +54,8 @@
 
   @media (min-width: 1280px) {
     .demo-list {
+      backdrop-filter: invert(30%);
+      border-radius: 16px;
       position: absolute;
       top: 15px;
       left: 20px;
