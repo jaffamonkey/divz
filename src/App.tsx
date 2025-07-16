@@ -144,7 +144,7 @@ function Demo3() {
         autoPlayDuration={5000}
         className="demo3"
         isDarkMode={true}
-        isExpanded={true}
+        isExpanded={false}
         showPlayButton={false}
         showExpandButton={false}
         onIndexChange={(i) => setSelectedIndex(i)}
