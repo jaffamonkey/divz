@@ -88,16 +88,16 @@
       pointer-events: all;
     }
   }
+}
 
-  .github {
-    position: absolute;
-    width: 64px;
-    height: auto;
-    top: 5px;
-    right: 25px;
-    font-size: 16px;
-    pointer-events: all;
-  }
+.github {
+  position: absolute;
+  width: 64px;
+  height: auto;
+  top: 2px;
+  right: 20px;
+  font-size: 16px;
+  pointer-events: all;
 }
 
 h1 {
