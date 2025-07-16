@@ -132,12 +132,12 @@ function Demo3() {
 
   return (
     <>
-      <video autoPlay playsInline loop muted className="background">
+      {/* <video autoPlay playsInline loop muted className="background">
         <source
           src="./demo3/1.mp4"
           type="video/mp4"
         />
-      </video>
+      </video> */}
 
       <Divz
         autoPlay={true}
