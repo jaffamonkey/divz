@@ -31,7 +31,7 @@
 
   .demo-list {
     backdrop-filter: invert(30%);
-    padding: 6px;
+    padding: 8px;
     border-radius: 16px;
     position: absolute;
     top: 5px;
