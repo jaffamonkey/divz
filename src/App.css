@@ -100,28 +100,28 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
   h1 {
     font-family: 'Cabal';
-    font-weight: bolder;
-    font-size: 72px;
+    font-size: 48px;
     color: #FFFFFF;
+    font-weight: bolder;
     margin-top: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
+  }
 
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
   }
 }
 
 h1 {
   font-family: 'Cabal';
-  font-size: 48px;
-  color: #FFFFFF;
   font-weight: bolder;
+  font-size: 72px;
+  color: #FFFFFF;
   margin-top: 18px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 a {
