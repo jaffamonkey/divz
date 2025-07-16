@@ -98,65 +98,66 @@
     font-size: 16px;
     pointer-events: all;
   }
+}
 
-  @media (min-width: 600px) {
-    h1 {
-      font-family: 'Cabal';
-      font-weight: bolder;
-      font-size: 72px;
-      color: #FFFFFF;
-      margin-top: 18px;
-      margin-bottom: 18px;
-
-      a {
-        text-decoration: none;
-      }
-    }
-  }
-
+@media (min-width: 600px) {
   h1 {
     font-family: 'Cabal';
-    font-size: 48px;
-    color: #FFFFFF;
     font-weight: bolder;
+    font-size: 72px;
+    color: #FFFFFF;
     margin-top: 18px;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 
     a {
       text-decoration: none;
     }
   }
+}
+
+h1 {
+  font-family: 'Cabal';
+  font-size: 48px;
+  color: #FFFFFF;
+  font-weight: bolder;
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+small {
+  line-height: normal;
+}
+
+@media (max-width: 480px) {
+  padding: 33px;
+
+  h1 {
+    font-family: 'Cabal';
+    font-size: 48px;
+    line-height: normal;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding-top: 25px;
+  }
+}
+
+@media (max-height: 480px) {
+  padding: 10px;
 
   small {
-    line-height: normal;
+    display: none;
   }
 
-  @media (max-width: 480px) {
-    padding: 33px;
-
-    h1 {
-      font-family: 'Cabal';
-      font-size: 48px;
-      line-height: normal;
-      color: #FFFFFF;
-      font-weight: bold;
-      padding-top: 25px;
-    }
+  h1 {
+    font-family: 'Cabal';
+    font-size: 48px;
+    margin-top: 25px;
   }
-
-  @media (max-height: 480px) {
-    padding: 10px;
-
-    small {
-      display: none;
-    }
-
-    h1 {
-      font-family: 'Cabal';
-      font-size: 48px;
-      margin-top: 25px;
-    }
-  }
+}
 }
 
 .fa {
