@@ -99,7 +99,7 @@
     pointer-events: all;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 600px) {
     h1 {
       font-family: 'Cabal';
       font-weight: bolder;
@@ -131,7 +131,7 @@
     line-height: normal;
   }
 
-  @media (max-width: 480px) {
+  /* @media (max-width: 480px) {
     padding: 33px;
 
     h1 {
@@ -157,7 +157,7 @@
       margin-top: 25px;
     }
   }
-}
+} */
 
 .fa {
   /* padding-right: 5px; */
