@@ -362,7 +362,7 @@ video.background {
   /* height: 50%; */
   font-family: 'Cabal';
   font-weight: bold;
-  top: 150px;
+  top: 100px;
   width: 15em;
   z-index: 1;
   margin: 0 auto;
@@ -593,7 +593,7 @@ video.background {
   /* backdrop-filter: invert(30%);
   border-radius: 16px; */
   font-family: "Cabal";
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #FFFFFF;
   font-weight: bold;
   line-height: 1.2;
