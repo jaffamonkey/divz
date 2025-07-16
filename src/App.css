@@ -100,7 +100,7 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   h1 {
     font-family: 'Cabal';
     font-weight: bolder;
