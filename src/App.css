@@ -10,7 +10,7 @@
 .app-header {
   position: absolute;
   box-sizing: border-box;
-  top: 20px;
+  top: 10px;
   width: 100%;
   padding: 20px;
   display: flex;
