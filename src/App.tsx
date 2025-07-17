@@ -161,14 +161,14 @@ function Demo3() {
         ))}
 
         {/* Example of just using a standard video element that loads immediately */}
-        <div>
+        {/* <div>
           <video autoPlay playsInline loop muted>
             <source
               src="./demo3/2.mp4"
               type="video/mp4"
             />
           </video>
-        </div>
+        </div> */}
       </Divz>
     </>
   );
