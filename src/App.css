@@ -552,7 +552,7 @@ video.background {
   font-family: "Cabal";
   font-weight: bold;
   font-size: 1.2rem;
-  height: 10em;
+  height: 8em;
   /* reserve space for line transitions */
   display: flex;
   align-items: center;
@@ -588,7 +588,7 @@ video.background {
     text-align: left;
     font-family: "Cabal";
     font-weight: bold;
-    height: 10em;
+    height: 8em;
     /* reserve space for line transitions */
     display: flex;
     align-items: center;
