@@ -125,6 +125,10 @@ const demo3Assets = [
     image: "./demo3/2.png",
     video: "./demo3/2.mp4",
   },
+  {
+    image: "./demo3/3.png",
+    video: "./demo3/3.mp4",
+  },
 ];
 
 function Demo3() {
