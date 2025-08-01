@@ -145,7 +145,7 @@ function Demo3() {
 
       <Divz
         autoPlay={true}
-        autoPlayDuration={5000}
+        autoPlayDuration={10000}
         className="demo3"
         isDarkMode={true}
         isExpanded={true}
