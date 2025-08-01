@@ -86,7 +86,7 @@
   @media (min-width: 1280px) {
     .github {
       position: absolute;
-      width: 75px;
+      width: 121px;
       height: auto;
       top: 5px;
       right: 20px;
@@ -98,7 +98,7 @@
 
 .github {
   position: absolute;
-  width: 45px;
+  width: 100px;
   height: auto;
   top: 2px;
   right: 15px;
