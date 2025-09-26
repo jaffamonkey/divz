@@ -105,7 +105,7 @@ function Demo2() {
         <div>
           <video autoPlay playsInline loop muted>
             <source
-              src="./demo3/1.mp4"
+              src="./demo3/4.mp4"
               type="video/mp4"
             />
           </video>
@@ -118,16 +118,32 @@ function Demo2() {
 // Demo 3 assets from Pixabay and Runway
 const demo3Assets = [
   {
-    image: "./demo3/1.png",
-    video: "./demo3/1.mp4",
+    image: "./demo3/4.png",
+    video: "./demo3/4.mp4",
   },
   {
-    image: "./demo3/2.png",
-    video: "./demo3/2.mp4",
+    image: "./demo3/5.png",
+    video: "./demo3/5.mp4",
   },
   {
-    image: "./demo3/3.png",
-    video: "./demo3/3.mp4",
+    image: "./demo3/6.png",
+    video: "./demo3/6.mp4",
+  },
+    {
+    image: "./demo3/7.png",
+    video: "./demo3/7.mp4",
+  },
+  {
+    image: "./demo3/8.png",
+    video: "./demo3/8.mp4",
+  },
+  {
+    image: "./demo3/9.png",
+    video: "./demo3/9.mp4",
+  },
+    {
+    image: "./demo3/10.png",
+    video: "./demo3/10.mp4",
   },
 ];
 
@@ -145,7 +161,7 @@ function Demo3() {
 
       <Divz
         autoPlay={true}
-        autoPlayDuration={10000}
+        autoPlayDuration={5000}
         className="demo3"
         isDarkMode={true}
         isExpanded={true}
