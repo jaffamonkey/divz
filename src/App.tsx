@@ -164,6 +164,7 @@ function Demo3() {
         autoPlayDuration={5000}
         className="demo3"
         isDarkMode={true}
+        isAutoPlayLooped={true}
         isExpanded={true}
         showPlayButton={false}
         showExpandButton={false}
