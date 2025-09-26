@@ -22,7 +22,7 @@ export const DivzVideoItem: React.FC<DivzVideoItemProps> = ({
   previewImage,
   index = 0,
   selectedIndex = 0,
-  videoDelay = 2000,
+  videoDelay = 1000,
   autoPlay = true,
   loop = false,
   controls = false,
