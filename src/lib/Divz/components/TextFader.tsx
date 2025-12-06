@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // ];
 
 const lines = [
-    "Welcome to yet another never-ending useless website for a movie that will never get made.",
+    "Welcome to yet another useless website for another movie that will never get made.",
     "Scroll through our photos and videos of vaguely Spanish stuff. Every few weeks we add a few more we found on Google.",
     "Web galleries may be dull, but what the hell - we can't be arsed to try.",
     "A magical movie that will never get made because we are already shitting money out of our arses.",
