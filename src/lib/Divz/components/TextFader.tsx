@@ -14,7 +14,8 @@ const lines = [
     "Welcome to yet another useless website for another movie that will never get made.",
     "Scroll through our photos and videos of vaguely Spanish stuff.",
     "A magical movie that will never get made because we just can't be arsed. Commitment is for losers.",
-    "Dine on the galleries, or allow the juice of our Instagram to run down your contented chin."
+    "Dine on the galleries, or allow the juice of our Instagram to run down your contented chin.",
+    "Just don't expect a movie - we are too rich and stupid to make one."    
 ];
 const TextFader: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
