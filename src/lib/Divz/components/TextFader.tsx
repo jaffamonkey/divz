@@ -12,8 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const lines = [
     "Welcome to yet another useless website for another movie that will never get made.",
-    "Scroll through our photos and videos of vaguely Spanish stuff. Every few weeks we add a few more we found on Google.",
-    // "Web galleries may be dull, but what the hell - we can't be that bothered.",
+    "Scroll through our photos and videos of vaguely Spanish stuff.",
     "A magical movie that will never get made because we just can't be arsed. Commitment is for losers.",
     "Dine on the galleries, or allow the juice of our Instagram to run down your contented chin."
 ];
