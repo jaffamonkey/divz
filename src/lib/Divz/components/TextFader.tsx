@@ -2,21 +2,21 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// const lines = [
-//     "Come to Terrormar, the idyllic island destination where fear is a distant memory",
-//     "Bask in the beautiful waters and allow all your worries to drift away like blood down a drain",
-//     "Stroll along the famous Playa del Espanto where the welcoming locals stand with open arms to remind you that, 'Death is not the end'",
-//     "Get lost in the magical carnival throng as it leads you through the looking glass of your most treasured illusions down to the Plaza de los Cuerpos",
-//     "Dine on the internationally acclaimed Food of the Gods and as you lick your lips allow the juice of eternal immortality to run down your contented chin"
-// ];
-
 const lines = [
-    "Welcome to yet another useless website for another movie that will never get made.",
-    "Scroll through our photos and videos of vaguely Spanish stuff.",
-    "A magical movie that will never get made because we just can't be arsed. Commitment is for losers.",
-    "Dine on the galleries, or allow the juice of our Instagram to run down your contented chin.",
-    "Just don't expect a movie - we are too rich and stupid to make one."    
+    "Come to Terrormar, the idyllic island destination where fear is a distant memory",
+    "Bask in the beautiful waters and allow all your worries to drift away like blood down a drain",
+    "Stroll along the famous Playa del Espanto where the welcoming locals stand with open arms to remind you that, 'Death is not the end'",
+    "Get lost in the magical carnival throng as it leads you through the looking glass of your most treasured illusions down to the Plaza de los Cuerpos",
+    "Dine on the internationally acclaimed Food of the Gods and as you lick your lips allow the juice of eternal immortality to run down your contented chin"
 ];
+
+// const lines = [
+//     "Welcome to yet another useless website for another movie that will never get made.",
+//     "Scroll through our photos and videos of vaguely Spanish stuff.",
+//     "A magical movie that will never get made because we just can't be arsed. Commitment is for losers.",
+//     "Dine on the galleries, or allow the juice of our Instagram to run down your contented chin.",
+//     "Just don't expect a movie - we are too rich and stupid to make one."    
+// ];
 const TextFader: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
