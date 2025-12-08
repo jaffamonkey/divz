@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fullscreen Video Background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #fff;
+    }
+
+    /* Container for the video */
+    #video-background {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    #video-background iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 177.78vh;  /* 16/9 aspect ratio: 100 * 16/9 */
+      height: 100vh;
+      min-width: 100vw;
+      min-height: 56.25vw;
+      pointer-events: none; /* no interaction with the YouTube iframe */
+    }
+
+    /* Optional content on top of the video */
+    .overlay-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 1rem;
+    }
+
+    /* Tiny prompt for enabling sound, not a "control bar" */
+    .sound-hint {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      z-index: 20;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .sound-hint.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background video container -->
+  <div id="video-background">
+    <div id="player"></div>
+  </div>
+
+  <!-- Optional foreground content -->
+  <div class="overlay-content">
+    <!-- You can remove or edit this content -->
+    <h1>Fullscreen Background Video</h1>
+    <p>The video is playing behind this content.</p>
+  </div>
+
+  <!-- Click hint to satisfy autoplay-with-sound requirements -->
+  <div id="soundHint" class="sound-hint">
+    Click anywhere to enable sound
+  </div>
+
+  <!-- Load the YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+
+    // This function is called by the YouTube IFrame API
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: 'eGxo6FQz3kQ', // Your video ID
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+          showinfo: 0,
+          modestbranding: 1,
+          loop: 1,
+          playlist: 'eGxo6FQz3kQ', // required for looping single video
+          fs: 0,
+          rel: 0,
+          disablekb: 1,
+          iv_load_policy: 3,
+          playsinline: 1
+        },
+        events: {
+          onReady: onPlayerReady,
+          onStateChange: onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      // Try to start with sound enabled
+      event.target.unMute();
+      event.target.playVideo();
+    }
+
+    function onPlayerStateChange(event) {
+      // Keep looping
+      if (event.data === YT.PlayerState.ENDED) {
+        event.target.seekTo(0);
+        event.target.playVideo();
+      }
+    }
+
+    // Many browsers block autoplay with sound.
+    // This click handler uses any click on the page as the required user gesture.
+    document.addEventListener('click', function enableSoundOnce() {
+      if (!player) return;
+      try {
+        player.unMute();
+        player.playVideo();
+      } catch (e) {
+        // ignore errors
+      }
+
+      const hint = document.getElementById('soundHint');
+      if (hint) {
+        hint.classList.add('hidden');
+      }
+
+      // Only need this once
+      document.removeEventListener('click', enableSoundOnce);
+    });
+  </script>
+</body>
+</html>
