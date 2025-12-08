@@ -1,125 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Fullscreen Video Background</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background: #000;
-    }
+<meta charset="UTF-8" />
+<title>Fullscreen Video Background</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    /* Fullscreen background container */
-    #video-background {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      z-index: -1;
-    }
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: black;
+}
 
-    #video-background iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 177.78vh;   /* 16:9 ratio */
-      height: 100vh;
-      min-width: 100vw;
-      min-height: 56.25vw;
-      pointer-events: none; /* hide interaction */
-    }
+/* Background container */
+#video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
 
-    /* Optional overlay content (remove if not needed) */
-    .overlay {
-      position: relative;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-family: system-ui, sans-serif;
-      text-align: center;
-    }
+/* YouTube iframe */
+#video-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 */
+  min-height: 100vh;
+  min-width: 177.77vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
 
-    .sound-hint {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      padding: 0.4rem 0.8rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      z-index: 10;
-    }
+/* Optional overlay */
+.overlay {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
-    .sound-hint.hidden {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-    }
-  </style>
+/* Sound hint */
+#soundHint {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s ease;
+}
+</style>
 </head>
+
 <body>
 
-  <div id="video-background">
-    <div id="player"></div>
-  </div>
+<div id="video-bg">
+  <div id="yt-player"></div>
+</div>
 
-  <!-- Optional content on top -->
-  <div class="overlay">
-    <!-- Remove this block if you want ONLY the video -->
-  </div>
+<div class="overlay">
+  <!-- Optional content -->
+</div>
 
-  <div id="soundHint" class="sound-hint">
-    Click anywhere for sound
-  </div>
+<div id="soundHint">Tap or click to enable sound</div>
 
-  <!-- YouTube API -->
-  <script src="https://www.youtube.com/iframe_api"></script>
-  <script>
-    let player;
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+let player;
 
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        videoId: 'eGxo6FQz3kQ',
-        playerVars: {
-          autoplay: 1,
-          controls: 0,
-          showinfo: 0,
-          modestbranding: 1,
-          loop: 1,
-          playlist: 'eGxo6FQz3kQ',
-          rel: 0,
-          fs: 0,
-          disablekb: 1,
-          iv_load_policy: 3,
-          playsinline: 1
-        },
-        events: {
-          onReady: (e) => {
-            e.target.unMute();
-            e.target.playVideo();
-          }
-        }
-      });
-    }
-
-    // Autoplay-with-sound fallback
-    document.addEventListener('click', function enableSound() {
-      if (player) {
-        player.unMute();
-        player.playVideo();
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('yt-player', {
+    videoId: 'eGxo6FQz3kQ',
+    width: '100%',
+    height: '100%',
+    playerVars: {
+      autoplay: 1,
+      controls: 0,
+      mute: 1,           // REQUIRED for autoplay
+      loop: 1,
+      playlist: 'eGxo6FQz3kQ',
+      rel: 0,
+      modestbranding: 1,
+      iv_load_policy: 3,
+      fs: 0,
+      disablekb: 1,
+      playsinline: 1
+    },
+    events: {
+      onReady: (e) => {
+        e.target.playVideo();
       }
-      document.getElementById('soundHint').classList.add('hidden');
-      document.removeEventListener('click', enableSound);
-    });
-  </script>
+    }
+  });
+}
+
+/* Enable sound after user interaction */
+document.addEventListener('click', () => {
+  if (player) {
+    player.unMute();
+    player.setVolume(100);
+  }
+  document.getElementById('soundHint').classList.add('hidden');
+}, { once: true });
+</script>
 
 </body>
 </html>
