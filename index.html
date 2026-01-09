@@ -1,40 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <!-- <link rel="icon" type="image/svg+xml" href="/icon.svg" /> -->
-  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    Terrormar club
-  </title>
-  <meta name="description" content="Welcome to the Terrormar club" />
+  <meta charset="UTF-8">
+  <title>Cleo</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="keywords"
-    content="react, css, reactjs, css3, html, html5, javascript, typescript, frontend, open-source, component, list, gallery, slideshow, slides, time-machine, carousel, swipe, zoom, zoomable, 3d, z-axis, transform" />
-  <meta name="author" content="Lewis Hunt" />
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
 
-  <meta property="og:title" content="Terrormar club" />
+    .video-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
 
-  <meta name="twitter:image:src" content="https://terrormar.club/demo4/29.jpg" />
-  <meta name="twitter:site" content="@github" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Terrormar club" />
-  <meta name="twitter:description" content="Terrormar club" />
-  <meta property="og:image" content="https://terrormar.club/demo4/29.jpg" />
-  <meta property="og:image:alt" content="Terrormar club" />
-  <meta property="og:site_name" content="GitHub" />
-  <meta property="og:type" content="object" />
-  <meta property="og:url" content="https://terrormar.club" />
-  <meta property="og:description" content="Welcome to the Terrormar club" />
+    .video-bg iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 177.78vh; /* 16:9 */
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0,.35);
+      color: white;
+      cursor: pointer;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .overlay.hidden {
+      display: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding-top: 40vh;
+      text-shadow: 0 0 6px black;
+    }
+  </style>
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
 
+  <div class="video-bg">
+    <iframe id="player"
+      src="https://www.youtube.com/embed/HuhYoNxQfiM?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=HuhYoNxQfiM&controls=0&rel=0"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div>
+      <h4>Click to enable sound 🔊</h4>
+      <!-- <p>Background video will play with audio</p> -->
+    </div>
+  </div>
+
+  <!-- <div class="content">
+    <h4>What are we for? We have no idea. But we do have a (diminishing) range of devoted flapheads that do my bidding, without question.</h4>
+  </div> -->
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    const player = document.getElementById('player');
+
+    overlay.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+      player.contentWindow.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: "unMute"
+        }),
+        "*"
+      );
+    });
+  </script>
+
+</body>
 </html>
