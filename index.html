@@ -9,121 +9,62 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     html, body {
-      margin: 0;
       height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #000;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
 
-    .video-bg {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .video-bg iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 177.78vh; /* 16:9 */
-      height: 100vh;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0,0,0,.35);
+    .content {
+      position: relative;
+      z-index: 1;
       color: white;
-      cursor: pointer;
-      z-index: 2;
-      text-align: center;
+
+      /* keep text left-justified */
+      text-align: left;
+
+      /* center the block and make it responsive */
+      max-width: 60ch;
+      margin: 0 auto;
+      padding: 40vh 1.25rem 2rem;
+
+      text-shadow: 0 0 6px black;
+      line-height: 1.55;
+      font-size: clamp(16px, 1.1vw + 12px, 20px);
     }
 
-    .overlay.hidden {
-      display: none;
+    .content p { margin: 0 0 1rem; }
+    .content ul { margin: 0 0 1rem 1.25rem; padding: 0; }
+    .content li { margin: 0.35rem 0; }
+
+    @media (max-width: 480px) {
+      .content {
+        padding-top: 30vh;
+        max-width: 90vw;
+      }
     }
-
-.content {
-  position: relative;
-  z-index: 1;
-  color: white;
-
-  /* keep text left-justified */
-  text-align: left;
-
-  /* center the block and make it responsive */
-  max-width: 60ch;                /* comfortable line length */
-  margin: 0 auto;                 /* centers horizontally */
-  padding: 20vh 1.25rem 0;         /* vertical placement + mobile-friendly side padding */
-
-  text-shadow: 0 0 6px black;
-}
-
-/* Optional: tune for very small screens */
-@media (max-width: 480px) {
-  .content {
-    padding-top: 30vh;            /* less vertical push on small screens */
-    max-width: 90vw;
-  }
-}
-
   </style>
 </head>
 <body>
-
-  <div class="video-bg">
-    <iframe id="player"
-      src="https://www.youtube.com/embed/NQmAQ9qQv1E?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=NQmAQ9qQv1E&controls=0&rel=0"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <div class="overlay" id="overlay">
-    <div>
-      <h4>Click to enable sound 🔊</h4>
-      <!-- <p>Background video will play with audio</p> -->
-    </div>
-  </div>
-
   <div class="content">
     <p>The only reason you’ve avoided contact with me for the past 40 days is because you began lying to people almost immediately after I left. Since then, you’ve built up a whole story based on those lies, while deliberately avoiding any contact with me from the moment you threw me out—after that bizarre, sudden outburst at me within 15 minutes of me waking up (after you’d been in the basement all night ‘busy doing nothing’).</p>
-<p>I’m done trying to reach you directly. CAB have been very helpful and are supporting me in taking the proper legal route to recover my belongings. You may think it’s nothing, but to me it’s important, and I want my things back.</p>
-<p>I also challenge you to provide any proof for what you’ve been saying. I don’t expect you to accept that challenge.</p>
-<p>The way you treated me—and Cleo—was disgusting, and I won’t forget it.</p>  
-  <p></p>Reply asap confirming one of the following:</p>
-<ul>
-<li>A time I can collect my belongings, or</li>
-<li>A time you will make them available for collection, or</li>
-<li>Agreement for a third party to collect them.</li>
-  </ul>
+
+    <p>I’m done trying to reach you directly. CAB have been very helpful and are supporting me in taking the proper legal route to recover my belongings. You may think it’s nothing, but to me it’s important, and I want my things back.</p>
+
+    <p>I also challenge you to provide any proof for what you’ve been saying. I don’t expect you to accept that challenge.</p>
+
+    <p>The way you treated me—and Cleo—was disgusting, and I won’t forget it.</p>
+
+    <p><strong>Reply asap confirming one of the following:</strong></p>
+    <ul>
+      <li>A time I can collect my belongings, or</li>
+      <li>A time you will make them available for collection, or</li>
+      <li>Agreement for a third party to collect them.</li>
+    </ul>
+
     <p>If you don’t respond asap, I will simply continue via the formal process I am following. You never did have the legal right to block me from collecting my things. Or to throw me out. I have always been able to respond to phonecalls or messages from you, and I received neither.</p>
   </div>
-  <script>
-    const overlay = document.getElementById('overlay');
-    const player = document.getElementById('player');
-
-    overlay.addEventListener('click', () => {
-      overlay.classList.add('hidden');
-      player.contentWindow.postMessage(
-        JSON.stringify({
-          event: "command",
-          func: "unMute"
-        }),
-        "*"
-      );
-    });
-  </script>
-
 </body>
 </html>
