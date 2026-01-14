@@ -49,7 +49,7 @@
 </head>
 <body>
   <div class="content">
-    <p>The only reason you’ve avoided contact with me for the past 43 days is because you began lying to people almost immediately after I left. Since then, you’ve built up a whole story based on those lies, while deliberately avoiding any contact with me from the moment you threw me out—after that bizarre, sudden outburst at me within 15 minutes of me waking up (after you’d been in the basement all night ‘busy doing nothing’).</p>
+    <p>The only reason you’ve avoided contact with me for the past <span id="days">43</span> days is because you began lying to people almost immediately after I left. Since then, you’ve built up a whole story based on those lies, while deliberately avoiding any contact with me from the moment you threw me out—after that bizarre, sudden outburst at me within 15 minutes of me waking up (after you’d been in the basement all night ‘busy doing nothing’).</p>
 
     <p>I’m done trying to reach you directly. CAB have been very helpful and are supporting me in taking the proper legal route to recover my belongings. You may think it’s nothing, but to me it’s important, and I want my things back.</p>
 
@@ -65,5 +65,24 @@
 
     <p>If you don’t respond asap, I will simply continue via the formal process I am following. You never did have the legal right to block me from collecting my things. Or to throw me out. I have always been able to respond to phonecalls or messages from you, and I received neither.</p>
   </div>
+  <script>
+  // No-contact start date: 1st December 2025
+  const startDateStr = "2025-12-01";
+
+  function daysSinceStart(startStr) {
+    const start = new Date(startStr + "T00:00:00");
+    const now = new Date();
+
+    // Normalize to midnight (local time) to avoid time-of-day edge cases
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    const msPerDay = 24 * 60 * 60 * 1000;
+    const diffMs = today - start;
+
+    return Math.max(0, Math.floor(diffMs / msPerDay));
+  }
+
+  document.getElementById("days").textContent = daysSinceStart(startDateStr);
+</script>
 </body>
 </html>
