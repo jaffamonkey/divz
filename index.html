@@ -2,27 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restore Britain - Wikipedia</title>
     <style>
         body { font-family: sans-serif; background-color: #f6f6f6; margin: 0; padding: 20px; color: #202122; }
-        .wiki-container { background: #fff; border: 1px solid #a2a9b1; padding: 20px; max-width: 1000px; margin: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h1 { font-family: 'Linux Libertine', 'Georgia', serif; border-bottom: 1px solid #a2a9b1; margin-bottom: 0.25em; padding-bottom: 0; font-size: 1.8em; font-weight: normal; }
-        .tagline { font-size: 0.8em; margin-bottom: 20px; }
-        .infobox { border: 1px solid #a2a9b1; background-color: #f8f9fa; width: 300px; float: right; margin: 0 0 1em 1em; padding: 5px; font-size: 0.9em; line-height: 1.5em; border-collapse: collapse; }
+        .wiki-container { background: #fff; border: 1px solid #a2a9b1; padding: 20px; max-width: 1100px; margin: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1 { font-family: 'Linux Libertine', 'Georgia', serif; border-bottom: 1px solid #a2a9b1; margin-bottom: 0.25em; padding-bottom: 0; font-size: 1.9em; font-weight: normal; }
+        .tagline { font-size: 0.8em; margin-bottom: 14px; color: #54595d; }
+        .notice { border: 1px solid #a2a9b1; background: #fff8d6; padding: 10px 12px; margin: 12px 0 16px 0; font-size: 0.9em; }
+        .notice b { color: #202122; }
+        .hatnote { font-style: italic; color: #54595d; margin: 8px 0 14px; font-size: 0.92em; }
+        .infobox { border: 1px solid #a2a9b1; background-color: #f8f9fa; width: 315px; float: right; margin: 0 0 1em 1em; padding: 5px; font-size: 0.9em; line-height: 1.5em; border-collapse: collapse; }
         .infobox th { background-color: #cedff2; text-align: center; font-size: 1.2em; padding: 8px; border: 1px solid #a2a9b1; }
-        .infobox td { padding: 4px 8px; border: 1px solid #a2a9b1; vertical-align: top; }
-        .toc { border: 1px solid #a2a9b1; background-color: #f8f9fa; padding: 15px; display: inline-block; margin-bottom: 20px; font-size: 0.9em; min-width: 200px; }
-        .toc h2 { font-size: 1em; text-align: center; margin: 0 0 10px 0; border: none; font-weight: bold; }
+        .infobox td { padding: 5px 8px; border: 1px solid #a2a9b1; vertical-align: top; }
+        .toc { border: 1px solid #a2a9b1; background-color: #f8f9fa; padding: 15px; display: inline-block; margin-bottom: 20px; font-size: 0.9em; min-width: 230px; }
+        .toc h2 { font-size: 1em; text-align: center; margin: 0 0 10px 0; border: none; font-weight: bold; font-family: sans-serif; }
         .toc ol { margin: 0; padding-left: 25px; }
         h2 { border-bottom: 1px solid #a2a9b1; font-size: 1.5em; margin-top: 1.5em; font-family: 'Linux Libertine', 'Georgia', serif; font-weight: normal; }
-        p { line-height: 1.6; margin: 0.8em 0; }
+        h3 { font-size: 1.17em; margin-top: 1.2em; font-family: sans-serif; }
+        p { line-height: 1.62; margin: 0.8em 0; }
         .edit-link { font-size: 0.6em; color: #0645ad; font-weight: normal; margin-left: 10px; cursor: pointer; text-decoration: none; }
         .sidebar-image { text-align: center; padding: 15px; background: white; }
-        .logo-box { font-weight:bold; font-size: 1.4em; color: #000; border: 3px solid #000; padding: 10px; display: inline-block; letter-spacing: 2px; }
-        .caption { font-size: 0.8em; color: #54595d; margin-top: 5px; }
+        .logo-box { font-weight:bold; font-size: 1.4em; color: #000; border: 3px solid #000; padding: 10px; display: inline-block; letter-spacing: 2px; transform: rotate(-1deg); }
+        .caption { font-size: 0.8em; color: #54595d; margin-top: 5px; line-height: 1.25; }
         .ref-list { font-size: 0.85em; padding-left: 20px; }
+        .wikitable { border-collapse: collapse; background: #f8f9fa; margin: 1em 0; font-size: 0.92em; }
+        .wikitable th, .wikitable td { border: 1px solid #a2a9b1; padding: 8px 10px; vertical-align: top; }
+        .wikitable th { background: #eaecf0; text-align: left; }
+        .quote-box { border-left: 4px solid #a2a9b1; margin: 1em 0; padding: 8px 12px; background: #f8f9fa; color: #202122; }
+        sup { font-size: 0.75em; line-height: 0; }
         a { color: #0645ad; text-decoration: none; }
         a:hover { text-decoration: underline; }
+        .small { font-size: 0.86em; color: #54595d; }
+        .navbox { border: 1px solid #a2a9b1; background: #f8f9fa; margin-top: 24px; font-size: 0.85em; clear: both; }
+        .navbox .title { background: #cedff2; text-align: center; font-weight: bold; padding: 6px; border-bottom: 1px solid #a2a9b1; }
+        .navbox .body { padding: 8px 10px; text-align: center; }
     </style>
 </head>
 <body>
@@ -30,53 +44,60 @@
         <h1>Restore Britain (party) <span class="edit-link">[edit]</span></h1>
         <div class="tagline">From Wikipedia, the free-standing encyclopedia of Great Yarmouth.</div>
 
+        <div class="notice"><b>This article is written from a satirical point of view.</b> It may contain excessive neutrality, insufficient hysteria, or references to persons who are technically still allowed near microphones.</div>
+        <div class="notice"><b>This article needs additional citations for verification.</b> Please help improve this article by adding references to respectable sources, anonymous WhatsApp screenshots, or things overheard by a man called Clive in a Toby Carvery.</div>
+        <div class="hatnote">For the concept of national restoration, see <a href="#">Painted over mould</a>. For the similarly named home-improvement movement, see <a href="#">Load-bearing resentment</a>.</div>
+
         <table class="infobox">
             <tr><th colspan="2">Restore Britain</th></tr>
             <tr><td colspan="2" class="sidebar-image">
                 <div class="logo-box">RESTORE!</div>
-                <div class="caption">Official logo (also a command given to staff)</div>
+                <div class="caption">Official logo, believed to have been designed by shouting at Microsoft Word</div>
             </td></tr>
             <tr><td><b>Leader</b></td><td><a href="#">Rupert Lowe MP</a></td></tr>
+            <tr><td><b>Chairman</b></td><td>Sir Gerald Blemish, Bt. (self-appointed)</td></tr>
             <tr><td><b>Founded</b></td><td>2024 (post-Reform realization)</td></tr>
-            <tr><td><b>Headquarters</b></td><td>First-class lounge, GWR Express</td></tr>
-            <tr><td><b>Ideology</b></td><td>High-Stakes Nostalgia<br>Neo-Feudalism<br>Advanced Grumbling</td></tr>
-            <tr><td><b>Political position</b></td><td>Far-Right (bespoke)</td></tr>
-            <tr><td><b>Membership</b></td><td>The "Truly Local" only</td></tr>
-            <tr><td><b>Colours</b></td><td>Oxford Blue & Smog Grey</td></tr>
+            <tr><td><b>Preceded by</b></td><td>A very long lunch</td></tr>
+            <tr><td><b>Headquarters</b></td><td>First-class lounge, GWR Express; various draughty function rooms</td></tr>
+            <tr><td><b>Youth wing</b></td><td>Young Fogeys for Tomorrow's Yesterday</td></tr>
+            <tr><td><b>Women's wing</b></td><td>Women Who Have Had Quite Enough, Actually</td></tr>
+            <tr><td><b>Think tank</b></td><td>The Institute for Things Being Said Properly</td></tr>
+            <tr><td><b>Ideology</b></td><td>High-Stakes Nostalgia<br>Neo-Feudalism<br>Advanced Grumbling<br>Algorithmic Pub Bore-ism<br>Estate-Agent Ethnonationalism</td></tr>
+            <tr><td><b>Political position</b></td><td>Far-right (bespoke, dry-clean only)</td></tr>
+            <tr><td><b>Membership</b></td><td>The "Truly Local" only, subject to annual patio inspection</td></tr>
+            <tr><td><b>Slogan</b></td><td>"Back to Normal, Before You Lot Arrived"</td></tr>
+            <tr><td><b>Colours</b></td><td>Oxford Blue, Smog Grey, and Planning Permission Beige</td></tr>
             <tr><td><b>Website</b></td><td><a href="#">restore-rupert.uk</a></td></tr>
         </table>
 
-        <p><b>Restore Britain</b> is a "political boutique" and elite lifeboat project founded in 2024 by <b>Rupert Lowe</b>, the MP for Great Yarmouth and unofficial patron saint of the "I’m not prejudiced, but..." demographic. The party positions itself as the "pure" alternative to Reform UK, catering specifically to a fanbase that finds Nigel Farage suspiciously cosmopolitan and the 21st century a bureaucratic overreach.</p>
+        <p><b>Restore Britain</b> is a fictionalised satirical depiction of a "political boutique" and elite lifeboat project founded in 2024 by <b>Rupert Lowe</b>, the MP for Great Yarmouth and unofficial patron saint of the "I’m not prejudiced, but..." demographic. The party positions itself as the "pure" alternative to Reform UK, catering specifically to a fanbase that finds Nigel Farage suspiciously cosmopolitan, the 21st century a bureaucratic overreach, and the phrase "human resources" a chilling communist experiment.</p>
+
+        <p>The party is best known for demanding the restoration of a Britain which, according to party literature, existed sometime between the invention of the steam engine and the first time a coffee was described as "flat". Scholars have described its programme as "a vibes-based constitutional panic" and "the sound a blazer makes when it learns about equality legislation".<sup>[1]</sup></p>
 
         <div class="toc">
             <h2>Contents</h2>
             <ol>
-                <li><a href="#history">1 History</a></li>
-                <li><a href="#ideology">2 Ideology and "The Baseline"</a></li>
-                <li><a href="#cromwell">3 The "Cromwell Club"</a></li>
-                <li><a href="#reform">4 Relationship with Reform UK</a></li>
-                <li><a href="#references">5 References</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#organisation">Organisation</a></li>
+                <li><a href="#ideology">Ideology and "The Baseline"</a></li>
+                <li><a href="#policies">Policies</a></li>
+                <li><a href="#cromwell">The "Cromwell Club"</a></li>
+                <li><a href="#membership">Membership and supporters</a></li>
+                <li><a href="#media">Media strategy</a></li>
+                <li><a href="#reform">Relationship with Reform UK</a></li>
+                <li><a href="#controversies">Controversies</a></li>
+                <li><a href="#electoral">Electoral performance</a></li>
+                <li><a href="#references">References</a></li>
             </ol>
         </div>
 
         <h2 id="history">History <span class="edit-link">[edit]</span></h2>
-        <p>The party was conceived when Rupert Lowe realized that being a Reform UK MP required him to occasionally touch the hands of the general public. Seeking a more "distanced" form of populism, he launched Restore Britain as a vehicle for those who believe the United Kingdom should be run with the same ruthless efficiency as a private boarding school or a liquidated football club.</p>
+        <p>The party was conceived when Rupert Lowe realized that being a Reform UK MP required him to occasionally touch the hands of the general public. Seeking a more "distanced" form of populism, he launched Restore Britain as a vehicle for those who believe the United Kingdom should be run with the same ruthless efficiency as a private boarding school, a liquidated football club, or a WhatsApp group where everyone is an administrator.</p>
 
-        <h2 id="ideology">Ideology and "The Baseline" <span class="edit-link">[edit]</span></h2>
-        <p>The party's central tenet is <b>The Great Palingenesia</b>, or "The Big Tidy Up." This involves a "Biological Sovereignty" audit to ensure the electorate consists solely of people whose family trees have been firmly planted in British soil since the invention of the steam engine. Subtle dog-whistling is replaced here with a high-frequency ultrasonic signal audible only to the landed gentry and those who have been banned from Facebook for "truth-telling."</p>
+        <p>Early meetings reportedly took place in rooms described by attendees as "panelled", "difficult to heat", and "containing at least one portrait of a man who definitely opposed decimalisation". The founding conference, held under the working title <i>Britain: Has Anyone Tried Turning It Off and On Again?</i>, concluded with the unanimous adoption of three core principles: restore order, restore pride, and restore the small plate of biscuits that had been removed during the coffee break.<sup>[2]</sup></p>
 
-        <h2 id="cromwell">The "Cromwell Club" <span class="edit-link">[edit]</span></h2>
-        <p>The Cromwell Club is the party's elite funding wing. Membership requires a minimum donation of £2,500 and a written essay on why the repeal of the Corn Laws was "a bit hasty." Members receive a "Restore Britain" branded brass knuckle-duster and a guide on how to describe their xenophobia as "a passion for local aesthetics."</p>
+        <h3>Founding myth</h3>
+        <p>Party lore states that Lowe was visited in a dream by the spirit of a county cricket pavilion, which instructed him to gather the disaffected, the over-leveraged, and those who still write letters to the council in fountain pen. The accuracy of this account has been disputed by historians, several of whom note that the pavilion in question had been converted into luxury flats in 2017.</p>
 
-        <h2 id="reform">Relationship with Reform UK <span class="edit-link">[edit]</span></h2>
-        <p>Restore Britain views Reform UK as "dangerous liberals" who are too obsessed with optics. Lowe’s supporters frequently refer to Richard Tice as a "centrist shill" and Nigel Farage as "the gateway drug to real patriotism." The party aims to occupy the space where the Overton Window falls off the side of the house and shatters on the patio.</p>
-
-        <h2 id="references">References <span class="edit-link">[edit]</span></h2>
-        <ol class="ref-list">
-            <li>Lowe, R. (2024). <i>Everything Was Better When You Couldn't Vote.</i> Manor House Press.</li>
-            <li><i>The Great Yarmouth Chronicles:</i> "MP Seen Eating Swan While Discussing Net Zero."</li>
-            <li>Telegram Channel: <i>Rupert's Real Raiders</i> (Admin: 'Patriot1776_NoWoke').</li>
-        </ol>
-    </div>
-</body>
-</html>
+        <h2 id="organisation">Organisation <span class="edit-link">[edit]</span></h2>
+        <p>Restore Britain is organised as a party, movement, lifestyle brand, grievance franchise, and emergency escape pod for donors whose previous political vehicles became "insufficiently classical". Its constit
