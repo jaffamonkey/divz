@@ -1,181 +1,756 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Restore Britain</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lowe Down — Restore Britain to 1742</title>
     <style>
         :root {
-            --blue: #002466;
-            --red: #cc0000;
-            --gold: #d4af37;
-            --parch: #fdfbf7;
+            --blue: #06194a;
+            --red: #b30000;
+            --red-dark: #5b0000;
+            --red-deep: #260000;
+            --red-hot: #ff1a1a;
+            --gold: #e3ba45;
+            --cream: #fff8ed;
+            --ink: #260000;
+            --panel: #fffdf9;
+            --shadow: rgba(70, 0, 0, 0.32);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Times New Roman', serif;
-            background: var(--parch);
-            color: #222;
+            font-family: Georgia, 'Times New Roman', serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 0, 0, 0.14), transparent 28rem),
+                linear-gradient(135deg, #fff9ef 0%, #ffe4dc 52%, #ffd2cd 100%);
+            color: var(--ink);
             margin: 0;
             padding: 0;
+            transition: background 0.2s ease, color 0.2s ease;
         }
 
-        body.rage {
-            --parch: #300;
+        a,
+        button {
+            font: inherit;
+        }
+
+        .parody-banner {
+            background: #180000;
             color: #fff;
-            animation: shk 0.1s infinite;
-        }
-
-        @keyframes shk {
-            0% {
-                transform: translate(1px, 1px);
-            }
-
-            50% {
-                transform: translate(-1px, -1px);
-            }
+            border-bottom: 3px solid var(--red-hot);
+            padding: 0.55rem 1rem;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 0.86rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         header {
-            background: var(--blue);
+            background:
+                linear-gradient(145deg, rgba(10, 0, 0, 0.2), rgba(255, 0, 0, 0.22)),
+                var(--red-dark);
             color: #fff;
             text-align: center;
-            padding: 1.5rem;
-            border-bottom: 5px solid var(--red);
+            padding: 2.3rem 1rem 1.8rem;
+            border-bottom: 8px solid var(--red-hot);
+            box-shadow: 0 10px 22px var(--shadow);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(3rem, 9vw, 6.7rem);
+            line-height: 0.86;
+            letter-spacing: -0.08em;
+            text-shadow: 4px 4px 0 #320000;
+            text-transform: uppercase;
+        }
+
+        header .strapline {
+            color: var(--gold);
+            margin: 0.9rem auto 0;
+            font-size: clamp(1.05rem, 2vw, 1.45rem);
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        header .subline {
+            margin: 0.75rem auto 0;
+            max-width: 760px;
+            color: #ffe6df;
+            font-size: 1.05rem;
+            font-style: italic;
+        }
+
+        .ticker {
+            background: #170000;
+            color: #ffef53;
+            border-bottom: 3px solid var(--red-hot);
+            border-top: 2px solid #ff6b6b;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.92rem;
+            font-weight: 800;
+            padding: 0.55rem 1rem;
+            text-align: center;
+            text-transform: uppercase;
         }
 
         nav {
-            background: #111;
-            padding: 0.5rem;
-            text-align: center;
+            align-items: center;
+            background: #300000;
+            border-bottom: 4px solid #870000;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            justify-content: center;
+            padding: 0.65rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a,
         nav button {
             color: #fff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            font-weight: bold;
-            background: none;
-            border: none;
+            padding: 0.62rem 0.88rem;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: transparent;
+            border: 1px solid transparent;
             cursor: pointer;
-            font-family: inherit;
         }
 
-        .grid {
-            max-width: 1000px;
-            margin: 1rem auto;
-            padding: 1rem;
+        nav a:hover,
+        nav a:focus-visible {
+            background: #5e0000;
+            border-color: #ff9393;
+        }
+
+        nav .rage-button {
+            background: var(--red-hot);
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 3px #630000;
+            margin-left: 0.35rem;
+        }
+
+        .page-shell {
+            max-width: 1180px;
+            margin: 1.3rem auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .hero-grid,
+        .content-grid,
+        .bottom-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 1.5rem;
+            gap: 1.25rem;
+            grid-template-columns: minmax(0, 2fr) minmax(250px, 1fr);
         }
 
-        .box {
-            background: #fff;
-            padding: 1.5rem;
-            border: 2px solid var(--blue);
-            color: #222;
+        .box,
+        .side,
+        .feature,
+        .shop,
+        .rage-lab {
+            background: rgba(255, 253, 249, 0.97);
+            border: 3px solid var(--red-dark);
+            box-shadow: 8px 8px 0 rgba(97, 0, 0, 0.16);
+            color: var(--ink);
+            padding: 1.3rem;
+        }
+
+        .box h2,
+        .feature h2,
+        .shop h2,
+        .rage-lab h2 {
+            border-bottom: 4px solid var(--red-hot);
+            color: var(--red-dark);
+            font-family: Arial, sans-serif;
+            font-size: clamp(1.45rem, 4vw, 2rem);
+            letter-spacing: -0.04em;
+            margin: 0 0 1rem;
+            padding-bottom: 0.42rem;
+            text-transform: uppercase;
         }
 
         .side {
-            background: #fff;
-            padding: 1rem;
-            border: 2px solid var(--red);
-            color: #222;
+            background: #fff0ec;
+            border-color: var(--red-hot);
         }
 
-        .shop {
-            max-width: 1000px;
-            margin: 1rem auto;
-            padding: 1rem;
-            background: #fff;
-            border: 3px solid var(--gold);
-            color: #222;
+        .side h3,
+        .card h3,
+        .mini-card h3 {
+            color: var(--red-dark);
+            font-family: Arial, sans-serif;
+            letter-spacing: -0.02em;
+            margin-top: 0;
+            text-transform: uppercase;
         }
 
-        .shop-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        .intro-stamp {
+            background: #8c0000;
+            border: 3px double #fff;
+            color: #fff;
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+            padding: 0.38rem 0.55rem;
+            transform: rotate(-1.5deg);
+            text-transform: uppercase;
         }
 
-        .card {
-            border: 1px solid #ccc;
-            padding: 1rem;
-            text-align: center;
-            background: #fafafa;
+        .policy-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .policy-list li {
+            border-left: 7px solid var(--red-hot);
+            background: #fff4ef;
+            margin: 0.72rem 0;
+            padding: 0.78rem 0.85rem;
+        }
+
+        .policy-list strong {
+            color: #710000;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
         }
 
         .btn {
-            display: block;
             background: var(--red);
+            border: 2px solid #760000;
             color: #fff;
-            padding: 0.5rem;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-size: 0.86rem;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            margin-top: 0.5rem;
+            padding: 0.65rem 0.78rem;
             text-align: center;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 0.5rem;
+            text-transform: uppercase;
         }
 
-        .ticker {
-            background: #000;
-            color: #0f0;
-            font-family: monospace;
+        .btn:hover,
+        .btn:focus-visible {
+            background: #5f0000;
+            outline: 3px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .btn.block {
+            display: block;
+        }
+
+        .urgent-box {
+            background: #480000;
+            border: 4px solid var(--red-hot);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin-top: 1rem;
+            padding: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .urgent-box strong {
+            color: #ffe64f;
+        }
+
+        .content-grid,
+        .bottom-grid {
+            margin-top: 1.25rem;
+        }
+
+        .feature-grid,
+        .shop-grid,
+        .mini-grid {
+            display: grid;
+            gap: 0.95rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mini-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .mini-card,
+        .card {
+            background: #fff7f4;
+            border: 2px solid #c04a4a;
+            padding: 0.95rem;
+        }
+
+        .mini-card p,
+        .card p {
+            margin-bottom: 0.35rem;
+        }
+
+        .price {
+            color: #6a0000;
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 1.15rem;
+            font-weight: 900;
+            margin-top: 0.55rem;
+        }
+
+        .meter-wrap {
+            background: #2d0000;
+            border: 3px solid #f22;
+            margin: 0.7rem 0 1rem;
             padding: 0.3rem;
+        }
+
+        .meter {
+            background: linear-gradient(90deg, #d10000, #ffef00, #ff0000);
+            height: 1rem;
+            width: 94%;
+        }
+
+        .rage-output {
+            background: #210000;
+            border: 3px solid #ff3535;
+            color: #fff;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            min-height: 4.5rem;
+            padding: 0.8rem;
+        }
+
+        .notice-list {
+            padding-left: 1.25rem;
+        }
+
+        .notice-list li {
+            margin: 0.55rem 0;
+        }
+
+        .small-print {
+            color: #6a3a3a;
+            font-family: Arial, sans-serif;
+            font-size: 0.77rem;
+            line-height: 1.45;
+        }
+
+        footer {
+            background: #240000;
+            border-top: 7px solid var(--red-hot);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 1.25rem;
             text-align: center;
+        }
+
+        footer strong {
+            color: var(--gold);
+        }
+
+        /* Full-fat rage mode */
+        body.rage {
+            --panel: #430000;
+            animation: tremble 0.12s infinite;
+            background:
+                repeating-linear-gradient(135deg, rgba(255, 0, 0, 0.35) 0 14px, transparent 14px 28px),
+                #2d0000;
+            color: #fff;
+        }
+
+        body.rage .parody-banner,
+        body.rage nav,
+        body.rage footer {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        body.rage header {
+            animation: pulse-red 0.55s infinite alternate;
+            background: #e00000;
+            border-color: #fff;
+        }
+
+        body.rage .ticker {
+            animation: pulse-red 0.45s infinite alternate;
+            background: #ff0000;
+            color: #fff;
+        }
+
+        body.rage .box,
+        body.rage .side,
+        body.rage .feature,
+        body.rage .shop,
+        body.rage .rage-lab,
+        body.rage .mini-card,
+        body.rage .card,
+        body.rage .policy-list li {
+            background: #4b0000;
+            border-color: #ff4d4d;
+            color: #fff;
+            box-shadow: 9px 9px 0 rgba(255, 0, 0, 0.27);
+        }
+
+        body.rage h2,
+        body.rage h3,
+        body.rage strong,
+        body.rage .price,
+        body.rage .small-print {
+            color: #fff;
+        }
+
+        body.rage .btn,
+        body.rage nav .rage-button {
+            animation: button-throb 0.58s infinite alternate;
+            background: #ff0000;
+            border-color: #fff;
+        }
+
+        body.rage .rage-output,
+        body.rage .urgent-box {
+            background: #ff0000;
+            border-color: #fff;
+        }
+
+        @keyframes tremble {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(1px, -1px); }
+            50% { transform: translate(-1px, 1px); }
+            75% { transform: translate(1px, 1px); }
+            100% { transform: translate(-1px, -1px); }
+        }
+
+        @keyframes pulse-red {
+            from { box-shadow: inset 0 0 0 0 rgba(255,255,255,0); }
+            to { box-shadow: inset 0 0 0 8px rgba(255,255,255,0.32); }
+        }
+
+        @keyframes button-throb {
+            from { transform: scale(1); }
+            to { transform: scale(1.055); }
+        }
+
+        @media (max-width: 820px) {
+            .hero-grid,
+            .content-grid,
+            .bottom-grid,
+            .mini-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .feature-grid,
+            .shop-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                position: static;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.001ms !important;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="parody-banner">Unofficial parody website — not an actual party website, thank heavens</div>
+
     <header>
         <h1>The Lowe Down</h1>
-        <p style="color:var(--gold);margin:0;">Restore Britain to 1742</p>
+        <p class="strapline">Restore Britain to 1742</p>
+        <p class="subline">A bold national programme for anyone who has ever looked at a self-checkout, a wind turbine or a decimal point and felt personally betrayed.</p>
     </header>
-    <div class="ticker">🔥 NEWS: Rupert Lowe tweets 47 times in one hour to ban net zero and the metric system. 🔥</div>
-    <nav><a href="#box">Manifesto</a><a href="#shop">Shop</a><button
-            onclick="document.body.classList.toggle('rage');alert('RAGE MODE!')" style="background:var(--red);">⚠️ RAGE
-            MODE</button></nav>
-    <div class="grid">
-        <main class="box" id="box">
-            <h2>Plan for Immediate Regression</h2>
-            <p>Britain is broken. Rupert Lowe is ready to return this isle to a simpler time when accounts were balanced
-                by quill.</p>
-            <ul>
-                <li><strong>1. Abolish Public Sector:</strong> Replaced entirely by volunteer aristocrats.</li>
-                <li><strong>2. Cancel Net Zero:</strong> We will outlaw the number zero. Emissions measured in Freedom
-                    Smoke.</li>
-                <li><strong>3. Football Doctrine:</strong> If GDP drops, the UK relegates itself to the European
-                    non-league.</li>
-            </ul>
-        </main>
-        <aside class="side">
-            <h3>💸 PATRIOT APPEAL</h3>
-            <p>Donate to buy Rupert thicker tweed jackets and faster internet for his X account.</p>
-            <a href="#" class="btn" onclick="alert('Thanks for funding the 18th century!')">Donate £50</a>
-            <hr>
-            <p><strong>Today's Rage:</strong> Wind turbines spin looking smug while blowing British air back to France.
-            </p>
-        </aside>
+
+    <div class="ticker" id="ticker">🔥 Breaking: metric system seen loitering near a village green. Inquiry demanded. 🔥</div>
+
+    <nav aria-label="Main navigation">
+        <a href="#manifesto">Manifesto</a>
+        <a href="#restorations">Restorations</a>
+        <a href="#grievance-lab">Rage Lab</a>
+        <a href="#shop">Sovereignty Shop</a>
+        <button class="rage-button" id="rageButton" type="button" aria-pressed="false">⚠ Activate Rage Mode</button>
+    </nav>
+
+    <div class="page-shell">
+        <section class="hero-grid">
+            <main class="box" id="manifesto">
+                <span class="intro-stamp">Emergency National Regression Plan</span>
+                <h2>Britain is broken. Fetch the quill.</h2>
+                <p>Modern Britain has become worryingly modern. There are QR codes in cafés, electric buses lurking in public and at least three kinds of oat milk. The only responsible response is immediate constitutional panic.</p>
+                <p>Our programme will restore the nation to a firmer, redder and more suspicious age, when every problem could be solved with a brass bell, a punitive toll gate and a man in tweed writing a furious letter to the parish newsletter.</p>
+
+                <ul class="policy-list">
+                    <li><strong>1. Abolish the public sector:</strong> Replace it with volunteer aristocrats, one overworked village postmistress and a laminated sign reading “use common sense”.</li>
+                    <li><strong>2. Cancel Net Zero:</strong> Outlaw the number zero. Emissions will be measured in patriotic chimney puffs and approving nods from retired colonels.</li>
+                    <li><strong>3. Reverse decimalisation:</strong> Shillings return immediately. All calculators will be confiscated and sent to France.</li>
+                    <li><strong>4. Protect British inches:</strong> Anyone using centimetres within five miles of a garden centre must attend compulsory ruler awareness training.</li>
+                    <li><strong>5. Restore proper weather:</strong> Clouds will require licences. Foreign rain will face tariffs. Drizzle to be designated a strategic national asset.</li>
+                    <li><strong>6. Football doctrine:</strong> When GDP falls, Britain will simply declare the data woke and award itself three points at home.</li>
+                    <li><strong>7. NHS reform:</strong> Reintroduce the healing power of stern advice, cold flannels and being told to walk it off by somebody called Derek.</li>
+                    <li><strong>8. Digital sovereignty:</strong> Replace online forms with a queue, a hatch and a biro chained to a desk in Wolverhampton.</li>
+                    <li><strong>9. Border control for pastries:</strong> Croissants may enter only after proving they can name three members of the 1966 World Cup squad.</li>
+                    <li><strong>10. National morale:</strong> Every household receives one emergency Union Jack, two mugs of tea and a weekly grievance rota.</li>
+                </ul>
+            </main>
+
+            <aside class="side">
+                <h3>💸 Patriot Appeal</h3>
+                <p>Donate today to buy Rupert a thicker tweed jacket, a louder internet connection and an emergency reserve of exclamation marks.</p>
+                <a href="#" class="btn block" onclick="fakeDonate(event)">Donate £17.42</a>
+                <a href="#" class="btn block" onclick="fakeDonate(event)">Sponsor a furious tweet</a>
+                <hr>
+                <h3>🚨 Grievance Level</h3>
+                <p><strong>Severe:</strong> a council website has used the phrase “sign in”.</p>
+                <div class="meter-wrap" aria-label="Grievance level: 94 percent">
+                    <div class="meter"></div>
+                </div>
+                <p class="small-print">Updated whenever somebody sees a reusable coffee cup or hears the word “inclusive”.</p>
+                <div class="urgent-box"><strong>Today’s outrage:</strong><br>Wind turbines continue spinning in a manner many observers have described as “smug”.</div>
+            </aside>
+        </section>
+
+        <section class="content-grid" id="restorations">
+            <div class="feature">
+                <h2>Flagship restorations</h2>
+                <div class="feature-grid">
+                    <article class="mini-card">
+                        <h3>🍺 The Pub Recovery Unit</h3>
+                        <p>Every boarded-up pub will reopen as a Grade II-listed grievance centre serving warm ale, crisps with only one flavour and opinions about roundabouts.</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>🛎 Village Bell Command</h3>
+                        <p>Push notifications are over. Important national announcements will be delivered by a red-faced man ringing a bell outside the Co-op.</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>🧱 Department of Walls</h3>
+                        <p>A new ministry dedicated to building walls, inspecting walls and explaining why any wall constructed elsewhere lacks British load-bearing values.</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>🫖 Strategic Tea Reserve</h3>
+                        <p>Tea bags will be stockpiled beneath Whitehall for deployment during national crises such as rain, football and a new cycle lane.</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>📜 Quill-First Government</h3>
+                        <p>All legislation must be handwritten on parchment, read aloud in a draughty hall and approved by somebody wearing a ceremonial chain.</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>🐴 Horse-Powered Growth</h3>
+                        <p>Britain’s productivity gap will be solved by replacing electric vehicles with horses and describing the manure as an infrastructure dividend.</p>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="side">
+                <h3>📢 Emergency broadcast</h3>
+                <p><strong>Remain calm.</strong> A café in Norwich has started serving sparkling water without apologising first.</p>
+                <p>The National Outrage COBRA Committee is monitoring developments from a function room above a pub.</p>
+                <button type="button" class="btn block" onclick="soundAlarm()">Demand inquiry</button>
+            </aside>
+        </section>
+
+        <section class="rage-lab" id="grievance-lab" style="margin-top:1.25rem;">
+            <h2>🔥 Automated grievance laboratory</h2>
+            <p>Running low on outrage? Press the button and our sovereign grievance engine will identify an urgent threat to the nation before teatime.</p>
+            <div class="rage-output" id="rageOutput" aria-live="polite">Awaiting a perfectly normal level of patriotic agitation...</div>
+            <button type="button" class="btn" onclick="generateRage()">Generate Fresh Outrage</button>
+            <button type="button" class="btn" onclick="generatePolicy()">Draft Emergency Policy</button>
+        </section>
+
+        <section class="shop" id="shop" style="margin-top:1.25rem;">
+            <h2>🛒 Sovereignty shop</h2>
+            <p>Every purchase funds an independent review into why Britain was better when household objects were heavier and every shop closed at 5pm.</p>
+            <div class="shop-grid">
+                <article class="card">
+                    <h3>Sovereignty Coal</h3>
+                    <p>100% clean British carbon pocket lumps. Rub two together whenever a heat pump passes your house.</p>
+                    <span class="price">£17.76</span>
+                    <a href="#" class="btn block" onclick="fakeBuy(event)">Add to bunker</a>
+                </article>
+                <article class="card">
+                    <h3>Anti-Metric Tape</h3>
+                    <p>Measures exclusively in King’s thumbs, stout hedgehogs and the width of an emotionally significant paving stone.</p>
+                    <span class="price">£24.99</span>
+                    <a href="#" class="btn block" onclick="fakeBuy(event)">Reject centimetres</a>
+                </article>
+                <article class="card">
+                    <h3>Emergency Tweed Vest</h3>
+                    <p>Extra pockets for receipts, grievances and a small laminated chart explaining the correct way to queue.</p>
+                    <span class="price">£62.10</span>
+                    <a href="#" class="btn block" onclick="fakeBuy(event)">Suit up</a>
+                </article>
+                <article class="card">
+                    <h3>Patriotic Smoke Kit</h3>
+                    <p>For recreating the reassuring industrial haze of a childhood you may or may not actually have experienced.</p>
+                    <span class="price">£19.50</span>
+                    <a href="#" class="btn block" onclick="fakeBuy(event)">Make chimney proud</a>
+                </article>
+                <article class="card">
+                    <h3>Red Alert Teacup</h3>
+                    <p>Displays “NATION IN DECLINE” whenever liquid is added. Works particularly well with builder’s tea.</p>
+                    <span class="price">£12.00</span>
+                    <a href="#" class="btn block" onclick="fakeBuy(event)">Brew concern</a>
+                </article>
+                <article class="card">
+                    <h3>Union Jack Fax Paper</h3>
+                    <p>For sending strongly worded documents to departments abolished in 1998. Fifty sheets, mildly damp.</p>
+                    <span class="price">£8.88</span>
+                    <a href="#" class="btn block" onclick="fakeBuy(event)">Fax the realm</a>
+                </article>
+                <article class="card">
+                    <h3>Woke Detector Wand</h3>
+                    <p>Beeps near bicycles, oat milk and any sentence containing the phrase “evidence-based”. Batteries not included.</p>
+                    <span class="price">£31.40</span>
+                    <a href="#" class="btn block" onclick="fakeBuy(event)">Scan village</a>
+                </article>
+                <article class="card">
+                    <h3>Traditional Queue Rope</h3>
+                    <p>Create an orderly line anywhere: pubs, post offices, parish meetings or emergency anti-decimal rallies.</p>
+                    <span class="price">£44.00</span>
+                    <a href="#" class="btn block" onclick="fakeBuy(event)">Form line</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="bottom-grid">
+            <div class="feature">
+                <h2>Frequently shouted questions</h2>
+                <div class="mini-grid">
+                    <article class="mini-card">
+                        <h3>Is this costed?</h3>
+                        <p>Absolutely. We found an old abacus in a pub and somebody rattled it with conviction.</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>Is any of this practical?</h3>
+                        <p>The question itself has been referred to the Department for Suspicious Modern Attitudes.</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>What is the end goal?</h3>
+                        <p>A Britain in which every citizen owns a waistcoat and no appliance has more than two buttons.</p>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="side">
+                <h3>📜 Terms of indignation</h3>
+                <ul class="notice-list">
+                    <li>No metric measurements.</li>
+                    <li>No QR codes after dusk.</li>
+                    <li>No wind turbine may rotate without a permit.</li>
+                    <li>No oat-based beverage may impersonate milk.</li>
+                    <li>All policies subject to escalation after reading social media.</li>
+                </ul>
+            </aside>
+        </section>
     </div>
-    <section class="shop" id="shop">
-        <h2>🛒 SOVEREIGNTY SHOP</h2>
-        <div class="shop-grid">
-            <div class="card">
-                <h3>Sovereignty Coal</h3>
-                <p>100% clean British carbon pocket lumps.</p><b style="color:var(--blue);">£17.76</b><a href="#"
-                    class="btn" onclick="alert('Added!')">Buy</a>
-            </div>
-            <div class="card">
-                <h3>Anti-Metric Tape</h3>
-                <p>Measures exclusively in King's thumbs.</p><b style="color:var(--blue);">£24.99</b><a href="#"
-                    class="btn" onclick="alert('Blocked!')">Buy</a>
-            </div>
-        </div>
-    </section>
-    <footer style="text-align:center;padding:1rem;background:var(--blue);color:#fff;font-size:0.8rem;">© 2026 Restore
-        Britain Party.</footer>
+
+    <footer>
+        <strong>THE LOWE DOWN</strong><br>
+        An unofficial parody. Not affiliated with Rupert Lowe, Restore Britain or any actual organisation.<br>
+        <span class="small-print" style="color:#ffe0dc;">No centimetres were knowingly used in the production of this website.</span>
+    </footer>
+
+    <script>
+        const rageHeadlines = [
+            'BREAKING: A café has written “flat white” on a chalkboard without obtaining parliamentary approval.',
+            'ALERT: A wind turbine has completed another rotation and is refusing to explain itself.',
+            'DEVELOPING: A council has painted a bicycle symbol on the road. Emergency tweed has been deployed.',
+            'OUTRAGE: Somebody used a QR code near a war memorial. The village bell is ringing continuously.',
+            'NATIONAL CRISIS: A supermarket shelf contains three different kinds of hummus.',
+            'EXCLUSIVE: A train arrived on time, raising serious questions about foreign interference.',
+            'LIVE: A decimal point has been seen entering a branch of Nationwide.',
+            'URGENT: A reusable coffee cup appears to be enjoying itself in public.'
+        ];
+
+        const emergencyPolicies = [
+            'Effective immediately, every roundabout must display a framed photograph of a steam engine.',
+            'All public Wi-Fi passwords must contain at least one reference to Dunkirk and one unnecessary capital letter.',
+            'Councils will appoint a Cabinet Member for Bins, Flags and General Unease.',
+            'Every smart thermostat will be replaced with a brass dial labelled COLD, STOUT and EMPIRE.',
+            'The nation will return to paper bus tickets printed in an emotionally reassuring shade of beige.',
+            'All village fêtes must include a compulsory queue, a tombola and a speech about the decline of handwriting.',
+            'Anyone caught measuring a shed in millimetres must explain themselves before a panel of retired geography teachers.'
+        ];
+
+        const tickerItems = [
+            '🔥 Breaking: metric system seen loitering near a village green. Inquiry demanded. 🔥',
+            '🚨 Red alert: oat milk spotted within 200 yards of a cenotaph. 🚨',
+            '📢 Developing: wind turbine spins anti-clockwise for several seconds. Britain demands answers. 📢',
+            '🔥 Newsflash: QR code refuses to provide a paper alternative. Emergency fax sent. 🔥',
+            '🚨 National concern: self-checkout unexpectedly asks whether you brought your own bag. 🚨'
+        ];
+
+        let tickerIndex = 0;
+        const ticker = document.getElementById('ticker');
+        const rageButton = document.getElementById('rageButton');
+
+        setInterval(() => {
+            tickerIndex = (tickerIndex + 1) % tickerItems.length;
+            ticker.textContent = tickerItems[tickerIndex];
+        }, 4200);
+
+        rageButton.addEventListener('click', () => {
+            const isRage = document.body.classList.toggle('rage');
+            rageButton.setAttribute('aria-pressed', String(isRage));
+            rageButton.textContent = isRage ? '🧯 De-escalate Slightly' : '⚠ Activate Rage Mode';
+            ticker.textContent = isRage
+                ? '🚨 MAXIMUM RAGE MODE: THE NATION IS NOW OPERATING AT 1742% INDIGNATION. 🚨'
+                : tickerItems[tickerIndex];
+        });
+
+        function generateRage() {
+            const output = document.getElementById('rageOutput');
+            output.textContent = rageHeadlines[Math.floor(Math.random() * rageHeadlines.length)];
+        }
+
+        function generatePolicy() {
+            const output = document.getElementById('rageOutput');
+            output.textContent = 'EMERGENCY POLICY: ' + emergencyPolicies[Math.floor(Math.random() * emergencyPolicies.length)];
+        }
+
+        function fakeDonate(event) {
+            event.preventDefault();
+            alert('Thank you. Your fictional donation has been converted into emergency tweed and 400 additional exclamation marks.');
+        }
+
+        function fakeBuy(event) {
+            event.preventDefault();
+            alert('Added to your sovereign basket. Delivery will be attempted by horse-drawn fax machine.');
+        }
+
+        function soundAlarm() {
+            alert('Inquiry demanded. A strongly worded fax is being prepared in triplicate.');
+        }
+    </script>
 </body>
 
 </html>
