@@ -339,6 +339,48 @@
             padding: 0.8rem;
         }
 
+        .acid-section {
+            background: linear-gradient(145deg, #fff8f4, #ffe0d9);
+            border-color: #8b0000;
+        }
+
+        .acid-intro {
+            border-left: 8px solid var(--red-hot);
+            font-size: 1.08rem;
+            line-height: 1.55;
+            margin: 0 0 1rem;
+            padding: 0.75rem 0.9rem;
+        }
+
+        .acid-grid {
+            display: grid;
+            gap: 0.9rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .acid-card {
+            background: #fff4ef;
+            border: 2px solid #b71919;
+            box-shadow: 5px 5px 0 rgba(97, 0, 0, 0.13);
+            padding: 0.95rem;
+        }
+
+        .acid-card h3 {
+            color: #690000;
+            font-family: Arial, sans-serif;
+            letter-spacing: -0.025em;
+            margin: 0 0 0.55rem;
+            text-transform: uppercase;
+        }
+
+        .acid-card p {
+            margin: 0;
+        }
+
+        .acid-warning {
+            margin-top: 1rem;
+        }
+
         .notice-list {
             padding-left: 1.25rem;
         }
@@ -403,6 +445,7 @@
         body.rage .rage-lab,
         body.rage .mini-card,
         body.rage .card,
+        body.rage .acid-card,
         body.rage .policy-list li {
             background: #4b0000;
             border-color: #ff4d4d;
@@ -453,7 +496,8 @@
             .hero-grid,
             .content-grid,
             .bottom-grid,
-            .mini-grid {
+            .mini-grid,
+            .acid-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -483,10 +527,12 @@
 </head>
 
 <body>
+    <div class="parody-banner">Unofficial parody website — not an actual party website, thank heavens</div>
+
     <header>
         <h1>The Lowe Down</h1>
         <p class="strapline">Restore Britain to 1742</p>
-        <p class="subline">A bold national programme for anyone who has ever looked at a self-checkout, a wind turbine or a decimal point and felt personally betrayed.</p>
+        <p class="subline">A bold national programme for anyone who has ever looked at a self-checkout, a wind turbine, a decimal point or another human being with a different background and felt personally betrayed.</p>
     </header>
 
     <div class="ticker" id="ticker">🔥 Breaking: metric system seen loitering near a village green. Inquiry demanded. 🔥</div>
@@ -494,6 +540,7 @@
     <nav aria-label="Main navigation">
         <a href="#manifesto">Manifesto</a>
         <a href="#restorations">Restorations</a>
+        <a href="#leadership">Leadership Values</a>
         <a href="#grievance-lab">Rage Lab</a>
         <a href="#shop">Sovereignty Shop</a>
         <button class="rage-button" id="rageButton" type="button" aria-pressed="false">⚠ Activate Rage Mode</button>
@@ -523,7 +570,7 @@
 
             <aside class="side">
                 <h3>💸 Patriot Appeal</h3>
-                <p>Donate today to buy Rupert a thicker tweed jacket, a louder internet connection and an emergency reserve of exclamation marks.</p>
+                <p>Donate today to buy Rupert a thicker tweed jacket, a louder internet connection, an emergency reserve of exclamation marks and a junior staff member trained to locate the “post” button before reflection sets in.</p>
                 <a href="#" class="btn block" onclick="fakeDonate(event)">Donate £17.42</a>
                 <a href="#" class="btn block" onclick="fakeDonate(event)">Sponsor a furious tweet</a>
                 <hr>
@@ -574,6 +621,39 @@
                 <p>The National Outrage COBRA Committee is monitoring developments from a function room above a pub.</p>
                 <button type="button" class="btn block" onclick="soundAlarm()">Demand inquiry</button>
             </aside>
+        </section>
+
+        <section class="feature acid-section" id="leadership" style="margin-top:1.25rem;">
+            <span class="intro-stamp">Character-building corner</span>
+            <h2>Leadership values: compassion, but make it somebody else’s problem</h2>
+            <p class="acid-intro">The modern political leader needs a steady hand, a thick Barbour and an almost industrial ability to convert every human complication into a grievance-shaped content opportunity. Here are the guiding principles of the movement.</p>
+            <div class="acid-grid">
+                <article class="acid-card">
+                    <h3>🐕 Delegate the difficult decisions</h3>
+                    <p>When the emotional burden becomes unpleasant, locate a gamekeeper. Then explain that the truly unreasonable part of the story is anybody still asking questions about it.</p>
+                </article>
+                <article class="acid-card">
+                    <h3>📱 Feed the engagement furnace</h3>
+                    <p>Take a complex social problem. Remove context, proportion and visible human beings. Add a minority group, several capital letters and a photograph of yourself looking sternly agricultural.</p>
+                </article>
+                <article class="acid-card">
+                    <h3>🧪 Distil resentment efficiently</h3>
+                    <p>Why solve anything slowly when you can reduce an entire country to a daily list of people the replies section has already been trained to dislike?</p>
+                </article>
+                <article class="acid-card">
+                    <h3>🪰 Maintain plausible astonishment</h3>
+                    <p>Spend all day sweetening the grievance compost heap, then appear amazed when the replies fill with flies. Insist that you merely asked a brave question.</p>
+                </article>
+                <article class="acid-card">
+                    <h3>📊 Treat people as spreadsheet debris</h3>
+                    <p>For difficult policy questions, replace empathy with a very large number and the phrase “if that means millions”. Human detail only slows the transition to a shareable graphic.</p>
+                </article>
+                <article class="acid-card">
+                    <h3>🎻 Play the persecuted country gentleman</h3>
+                    <p>After setting the internet alight, retire behind the ha-ha and explain that you are the real victim here: a plain-speaking man unfairly oppressed by the existence of follow-up questions.</p>
+                </article>
+            </div>
+            <div class="urgent-box acid-warning"><strong>Movement philosophy:</strong><br>Compassion is welcome, provided it does not interrupt the content schedule or require anybody to put down the phone.</div>
         </section>
 
         <section class="rage-lab" id="grievance-lab" style="margin-top:1.25rem;">
@@ -655,6 +735,18 @@
                         <h3>What is the end goal?</h3>
                         <p>A Britain in which every citizen owns a waistcoat and no appliance has more than two buttons.</p>
                     </article>
+                    <article class="mini-card">
+                        <h3>Why is everyone so angry?</h3>
+                        <p>An excellent question. Please direct it to the gentleman feeding grievances into the algorithm from breakfast until closing time.</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>Is compassion permitted?</h3>
+                        <p>Certainly. It will be considered after the next engagement report, provided it does not require context or inconvenience the gamekeeper.</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>Why so many enemies?</h3>
+                        <p>A movement powered by resentment requires a reliable fuel supply. Fortunately, social media offers next-day delivery.</p>
+                    </article>
                 </div>
             </div>
 
@@ -686,7 +778,11 @@
             'NATIONAL CRISIS: A supermarket shelf contains three different kinds of hummus.',
             'EXCLUSIVE: A train arrived on time, raising serious questions about foreign interference.',
             'LIVE: A decimal point has been seen entering a branch of Nationwide.',
-            'URGENT: A reusable coffee cup appears to be enjoying itself in public.'
+            'URGENT: A reusable coffee cup appears to be enjoying itself in public.',
+            'LEADERSHIP UPDATE: empathy has been reviewed and found insufficiently shareable.',
+            'BREAKING: a difficult moral decision has been outsourced to the estate staff.',
+            'ALERT: the replies section has become unpleasant after another full day of carefully seasoned grievance bait.',
+            'DEVELOPING: a complex social issue has been reduced to a minority group and a very large number.'
         ];
 
         const emergencyPolicies = [
@@ -696,7 +792,10 @@
             'Every smart thermostat will be replaced with a brass dial labelled COLD, STOUT and EMPIRE.',
             'The nation will return to paper bus tickets printed in an emotionally reassuring shade of beige.',
             'All village fêtes must include a compulsory queue, a tombola and a speech about the decline of handwriting.',
-            'Anyone caught measuring a shed in millimetres must explain themselves before a panel of retired geography teachers.'
+            'Anyone caught measuring a shed in millimetres must explain themselves before a panel of retired geography teachers.',
+            'Every difficult social question will be compressed into a red graphic before anybody is permitted to introduce context.',
+            'All replies sections must be lightly misted with plausible deniability twice daily.',
+            'Policy announcements will be issued only after the engagement furnace reaches a safe operating temperature.'
         ];
 
         const tickerItems = [
@@ -704,7 +803,10 @@
             '🚨 Red alert: oat milk spotted within 200 yards of a cenotaph. 🚨',
             '📢 Developing: wind turbine spins anti-clockwise for several seconds. Britain demands answers. 📢',
             '🔥 Newsflash: QR code refuses to provide a paper alternative. Emergency fax sent. 🔥',
-            '🚨 National concern: self-checkout unexpectedly asks whether you brought your own bag. 🚨'
+            '🚨 National concern: self-checkout unexpectedly asks whether you brought your own bag. 🚨',
+            '🔥 Leadership bulletin: grievance compost heap attracts flies. Nobody could have predicted this. 🔥',
+            '🚨 Developing: nuance removed from policy document to improve social-media performance. 🚨',
+            '📢 Estate update: difficult decision successfully delegated. Follow-up questions declared woke. 📢'
         ];
 
         let tickerIndex = 0;
