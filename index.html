@@ -83,6 +83,21 @@
             text-transform: uppercase;
         }
 
+        .hero-video {
+            margin: -1.3rem -1.3rem 1.5rem;
+            overflow: hidden;
+            border-bottom: 4px solid var(--red-hot);
+            background: #000;
+        }
+        
+        .hero-video video {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
         header {
             background:
                 linear-gradient(145deg, rgba(10, 0, 0, 0.2), rgba(255, 0, 0, 0.22)),
@@ -603,9 +618,24 @@
 
     <div class="page-shell">
         <section class="hero-grid">
-            <main class="box" id="manifesto">
-                <span class="intro-stamp">Emergency National Regression Plan</span>
-                <h2>Britain is broken. Fetch the quill.</h2>
+<main class="box" id="manifesto">
+
+    <div class="hero-video">
+        <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            controls>
+            <source src="sniffer.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <span class="intro-stamp">Emergency National Regression Plan</span>
+
+    <h2>Britain is broken. Fetch the quill.</h2>
                 <p>Modern Britain has become worryingly modern. There are QR codes in cafés, electric buses lurking in
                     public and at least three kinds of oat milk. The only responsible response is immediate
                     constitutional panic, uploaded before breakfast and seasoned for maximum reply-section spoilage.</p>
